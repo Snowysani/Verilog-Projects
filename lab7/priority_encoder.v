@@ -2,13 +2,12 @@
 `default_nettype none
 
 module priority_encoder(
-    input wire [3:0] W,
-    output wire zero, 
-    // y outputs 2 bit reg
-    output reg [1:0] Y
+    input wire [3:0] W, // 4 bit input W
+    output wire zero, // output zero
+    output reg [1:0] Y //output reg 2 bb
     );
     
-    assign zero = (W == 4'b0000); 
+    assign zero = (W == 4'b0000); //set all to 0 w
     
     always@(W) // trigger when W changes
         begin
